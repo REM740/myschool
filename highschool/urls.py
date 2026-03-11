@@ -6,7 +6,7 @@ from . import views
 app_name = 'highschool'
 
 urlpatterns = [
-    path('/', include('highschool.urls'))
+    path('/', views.enroll, name='homepage'),
 
 ]
 
