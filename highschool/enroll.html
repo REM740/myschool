@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Enroll in High School</title>
+
+</head>
+<body>
+    <h1>Enroll in High School</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min=0 required><br><br>
+        <label>
+            Gender:
+            <select name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </label>    
+        <br><br>
+        <input type="submit" value="Enroll">
+    </form>    
+    {% if submitted %}
+    <h2> Submitted </h2>
+    <ul>
+        <li>First Name: {{ firstName }}</li>
+        <li>Last Name: {{ lastName }}</li>
+        <li>Age: {{ age }}</li>
+        <li>Gender: {{ gender }}</li>
+    </ul>
+    {% endif %}
+    </body>
+</html>>
